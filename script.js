@@ -1,76 +1,116 @@
+let allQuestions = {};
 let questions = [];
 let current = 0;
 
-const buttons = document.querySelectorAll(".answers button");
 const questionEl = document.getElementById("question");
-const levelEl = document.getElementById("level");
-const imgEl = document.getElementById("questionImage");
+const answersDiv = document.querySelector(".answers");
+const topicTitle = document.getElementById("topicTitle");
 const nextBtn = document.getElementById("nextBtn");
-const endScreen = document.getElementById("endScreen");
 
-/* Fisher–Yates shuffle */
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-/* Load câu hỏi từ JSON */
+/* ======================
+   LOAD JSON CỐ ĐỊNH
+====================== */
 fetch("questions.json")
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
-        questions = data;
-        shuffleArray(questions);
-        loadQuestion();
-    })
-    .catch(err => {
-        alert("Cannot load questions.json. Please run with local server.");
-        console.error(err);
+        allQuestions = data;
+        renderTopics(Object.keys(data));
     });
 
-function loadQuestion() {
-    const q = questions[current];
-    levelEl.textContent = "Prize: " + q.level;
-    questionEl.textContent = q.text;
+/* ======================
+   HIỂN THỊ TOPIC
+====================== */
+function renderTopics(topics) {
+    const sidebar = document.getElementById("topicList");
+    sidebar.innerHTML = "";
 
-    if (q.image) {
-        imgEl.src = q.image;
-        imgEl.style.display = "block";
-    } else {
-        imgEl.style.display = "none";
+    topics.forEach(topic => {
+        const btn = document.createElement("button");
+        btn.innerText = topic;
+        btn.onclick = () => startTopic(topic);
+        sidebar.appendChild(btn);
+    });
+}
+
+/* ======================
+   BẮT ĐẦU 1 TOPIC
+====================== */
+function startTopic(topic) {
+    topicTitle.innerText = "Topic: " + topic;
+
+    questions = [...allQuestions[topic]];
+    shuffleArray(questions);
+
+    current = 0;
+    loadQuestion();
+}
+
+/* ======================
+   LOAD CÂU HỎI
+====================== */
+function loadQuestion() {
+    if (current >= questions.length) {
+        questionEl.innerText = "🎉 Finished!";
+        answersDiv.innerHTML = "";
+        nextBtn.style.display = "none";
+        return;
     }
 
-    buttons.forEach((btn, i) => {
-        btn.textContent = q.answers[i];
-        btn.className = "";
-        btn.disabled = false;
+    const q = questions[current];
+    questionEl.innerText = q.question;
+
+    answersDiv.innerHTML = "";
+
+    const shuffledOptions = [...q.options];
+    shuffleArray(shuffledOptions);
+
+    shuffledOptions.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(btn, opt);
+        answersDiv.appendChild(btn);
     });
 
     nextBtn.style.display = "none";
 }
 
-function checkAnswer(index) {
-    const correct = questions[current].correct;
+/* ======================
+   KIỂM TRA ĐÁP ÁN
+====================== */
+function checkAnswer(button, selected) {
+    const correct = questions[current].answer;
+    const buttons = document.querySelectorAll(".answers button");
 
-    buttons[index].classList.add(
-        index === correct ? "correct" : "wrong"
-    );
-    buttons[correct].classList.add("correct");
+    buttons.forEach(b => b.disabled = true);
 
-    buttons.forEach(btn => btn.disabled = true);
+    if (selected === correct) {
+        button.classList.add("correct");
+    } else {
+        button.classList.add("wrong");
+        buttons.forEach(b => {
+            if (b.innerText === correct) {
+                b.classList.add("correct");
+            }
+        });
+    }
+
     nextBtn.style.display = "inline-block";
 }
 
-function nextQuestion() {
+/* ======================
+   NEXT QUESTION
+====================== */
+nextBtn.onclick = () => {
     current++;
-    if (current < questions.length) {
-        loadQuestion();
-    } else {
-        document.querySelector(".answers").style.display = "none";
-        questionEl.style.display = "none";
-        levelEl.style.display = "none";
-        nextBtn.style.display = "none";
-        endScreen.style.display = "block";
+    loadQuestion();
+};
+
+/* ======================
+   HÀM RANDOM
+====================== */
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
     }
 }

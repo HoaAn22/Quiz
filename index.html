@@ -2,34 +2,37 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Who Wants to Be a Millionaire - English Quiz</title>
+<title>English Quiz</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div class="layout">
 
-<div class="container">
-    <h1>WHO WANTS TO BE A MILLIONAIRE</h1>
-
-    <!-- <input type="file" id="fileInput" accept=".json"> -->
-    <div id="level"></div>
-
-    <img id="questionImage">
-
-    <div id="question"></div>
-
-    <div class="answers">
-        <button onclick="checkAnswer(0)"></button>
-        <button onclick="checkAnswer(1)"></button>
-        <button onclick="checkAnswer(2)"></button>
-        <button onclick="checkAnswer(3)"></button>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h3>Topics</h3>
+        <div id="topicList"></div>
     </div>
 
-    <button id="nextBtn" onclick="nextQuestion()">Next Question</button>
+    <!-- MAIN GAME -->
+    <div class="container">
+        <h1>English Quiz</h1>
+        <div id="topicTitle"></div>
 
-    <div id="endScreen">🎉 Game Finished!</div>
+        <div id="question"></div>
+
+        <div class="answers">
+            <button onclick="checkAnswer(0)"></button>
+            <button onclick="checkAnswer(1)"></button>
+            <button onclick="checkAnswer(2)"></button>
+            <button onclick="checkAnswer(3)"></button>
+        </div>
+
+        <button id="nextBtn" onclick="nextQuestion()">Next</button>
+        <div id="endScreen">Finished!</div>
+    </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>

@@ -1,28 +1,40 @@
-[
-  {
-    "level": "£100",
-    "text": "What does the word \"apple\" mean?",
-    "image": "",
-    "answers": ["A fruit", "A vehicle", "A country", "A color"],
-    "correct": 0
-  },
-  {
-    "level": "£200",
-    "text": "Choose the correct sentence.",
-    "image": "",
-    "answers": [
-      "She go to school every day",
-      "She goes to school every day",
-      "She going to school every day",
-      "She gone to school every day"
-    ],
-    "correct": 1
-  },
-  {
-    "level": "£300",
-    "text": "What is the past tense of \"eat\"?",
-    "image": "",
-    "answers": ["eated", "ate", "eats", "eating"],
-    "correct": 1
-  }
-]
+{
+  "Prepositions": [
+    {
+      "question": "She is ___ the room.",
+      "options": ["in", "on", "at", "under"],
+      "answer": "in"
+    },
+    {
+      "question": "The cat is ___ the table.",
+      "options": ["under", "in", "on", "between"],
+      "answer": "under"
+    }
+  ],
+
+  "Music": [
+    {
+      "question": "Which instrument has keys?",
+      "options": ["Piano", "Drum", "Guitar", "Violin"],
+      "answer": "Piano"
+    },
+    {
+      "question": "Who sings songs?",
+      "options": ["Singer", "Driver", "Doctor", "Farmer"],
+      "answer": "Singer"
+    }
+  ],
+
+  "Traffic": [
+    {
+      "question": "What does a red light mean?",
+      "options": ["Stop", "Go", "Turn left", "Speed up"],
+      "answer": "Stop"
+    },
+    {
+      "question": "This sign means:",
+      "options": ["No parking", "Hospital", "School", "Bus stop"],
+      "answer": "No parking"
+    }
+  ]
+}
