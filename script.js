@@ -1,6 +1,7 @@
 let allQuestions = {};
 let questions = [];
 let current = 0;
+let score = 0;
 
 const questionEl = document.getElementById("question");
 const answersDiv = document.querySelector(".answers");
@@ -36,7 +37,10 @@ function renderTopics(topics) {
    BẮT ĐẦU 1 TOPIC
 ====================== */
 function startTopic(topic) {
-    topicTitle.innerText = "Topic: " + topic;
+    document.getElementById("topicName").innerText = topic;
+
+    score = 0;
+    document.getElementById("score").innerText = score;
 
     questions = [...allQuestions[topic]];
     shuffleArray(questions);
@@ -85,8 +89,13 @@ function checkAnswer(button, selected) {
 
     if (selected === correct) {
         button.classList.add("correct");
+
+        score += 10;  // ✅ cộng điểm
+        document.getElementById("score").innerText = score;
+
     } else {
         button.classList.add("wrong");
+
         buttons.forEach(b => {
             if (b.innerText === correct) {
                 b.classList.add("correct");
@@ -94,7 +103,7 @@ function checkAnswer(button, selected) {
         });
     }
 
-    nextBtn.style.display = "inline-block";
+    document.getElementById("nextBtn").style.display = "inline-block";
 }
 
 /* ======================
