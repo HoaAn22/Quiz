@@ -5,11 +5,13 @@ let score = 0;
 
 const questionEl = document.getElementById("question");
 const answersDiv = document.querySelector(".answers");
-const topicTitle = document.getElementById("topicTitle");
+const topicTitle = document.getElementById("topicName");
+const scoreEl = document.getElementById("score");
 const nextBtn = document.getElementById("nextBtn");
+const explanationBox = document.getElementById("explanationBox");
 
 /* ======================
-   LOAD JSON CỐ ĐỊNH
+   LOAD JSON
 ====================== */
 fetch("questions.json")
     .then(res => res.json())
@@ -19,7 +21,7 @@ fetch("questions.json")
     });
 
 /* ======================
-   HIỂN THỊ TOPIC
+   RENDER TOPIC
 ====================== */
 function renderTopics(topics) {
     const sidebar = document.getElementById("topicList");
@@ -34,13 +36,13 @@ function renderTopics(topics) {
 }
 
 /* ======================
-   BẮT ĐẦU 1 TOPIC
+   START TOPIC
 ====================== */
 function startTopic(topic) {
-    document.getElementById("topicName").innerText = topic;
+    topicTitle.innerText = topic;
 
     score = 0;
-    document.getElementById("score").innerText = score;
+    scoreEl.innerText = score;
 
     questions = [...allQuestions[topic]];
     shuffleArray(questions);
@@ -50,20 +52,29 @@ function startTopic(topic) {
 }
 
 /* ======================
-   LOAD CÂU HỎI
+   LOAD QUESTION
 ====================== */
 function loadQuestion() {
     if (current >= questions.length) {
         questionEl.innerText = "🎉 Finished!";
         answersDiv.innerHTML = "";
         nextBtn.style.display = "none";
+
+        explanationBox.style.display = "block";
+        explanationBox.className = "";
+        explanationBox.innerHTML = `🏆 Final score: <b>${score}</b>`;
         return;
     }
 
     const q = questions[current];
-    questionEl.innerText = q.question;
 
+    questionEl.innerText = q.question;
     answersDiv.innerHTML = "";
+
+    // Reset explanation
+    explanationBox.style.display = "none";
+    explanationBox.innerHTML = "";
+    explanationBox.className = "";
 
     const shuffledOptions = [...q.options];
     shuffleArray(shuffledOptions);
@@ -79,19 +90,26 @@ function loadQuestion() {
 }
 
 /* ======================
-   KIỂM TRA ĐÁP ÁN
+   CHECK ANSWER + EXPLANATION
 ====================== */
 function checkAnswer(button, selected) {
-    const correct = questions[current].answer;
+    const q = questions[current];
+    const correct = q.answer;
     const buttons = document.querySelectorAll(".answers button");
 
     buttons.forEach(b => b.disabled = true);
 
+    explanationBox.style.display = "block";
+
     if (selected === correct) {
         button.classList.add("correct");
 
-        score += 10;  // ✅ cộng điểm
-        document.getElementById("score").innerText = score;
+        score += 10;
+        scoreEl.innerText = score;
+
+        explanationBox.classList.add("correct");
+        explanationBox.innerHTML =
+            `<b>Correct.</b><br>${q.explanation.correct}`;
 
     } else {
         button.classList.add("wrong");
@@ -101,9 +119,15 @@ function checkAnswer(button, selected) {
                 b.classList.add("correct");
             }
         });
+
+        explanationBox.classList.add("wrong");
+        explanationBox.innerHTML =
+            `<b>Wrong.</b><br>
+             <b>Correct answer:</b> ${correct}<br><br>
+             ${q.explanation.wrong[selected]}`;
     }
 
-    document.getElementById("nextBtn").style.display = "inline-block";
+    nextBtn.style.display = "inline-block";
 }
 
 /* ======================
@@ -115,7 +139,7 @@ nextBtn.onclick = () => {
 };
 
 /* ======================
-   HÀM RANDOM
+   SHUFFLE
 ====================== */
 function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {

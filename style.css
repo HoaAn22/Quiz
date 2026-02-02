@@ -134,6 +134,24 @@ h1 {
     background: #d72638 !important;
 }
 
+#explanationBox {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    font-size: 15px;
+    text-align: left;
+    display: none;
+}
+
+#explanationBox.correct {
+    border-left: 4px solid #00ff99;
+}
+
+#explanationBox.wrong {
+    border-left: 4px solid crimson;
+}
+
 /* ================= NÚT NEXT ================= */
 #nextBtn {
     align-self: center;

@@ -2,39 +2,407 @@
   "Prepositions": [
     {
       "question": "She is ___ the room.",
-      "options": ["in", "on", "at", "under"],
-      "answer": "in"
+      "options": ["in", "on", "at", "to"],
+      "answer": "in",
+      "explanation": {
+        "correct": "In dùng cho không gian kín như phòng, hộp, tòa nhà.",
+        "wrong": {
+          "on": "On dùng cho bề mặt tiếp xúc.",
+          "at": "At nhấn mạnh vị trí như một điểm.",
+          "to": "To chỉ hướng di chuyển."
+        }
+      }
     },
     {
-      "question": "The cat is ___ the table.",
-      "options": ["under", "in", "on", "between"],
-      "answer": "under"
-    }
-  ],
+      "question": "The book is ___ the table.",
+      "options": ["in", "on", "at", "above"],
+      "answer": "on",
+      "explanation": {
+        "correct": "On dùng khi vật tiếp xúc trực tiếp với bề mặt.",
+        "wrong": {
+          "in": "In là bên trong không gian kín.",
+          "at": "At không dùng cho quan hệ bề mặt.",
+          "above": "Above là phía trên nhưng không tiếp xúc."
+        }
+      }
+    },
+    {
+      "question": "We arrived ___ the airport early.",
+      "options": ["to", "at", "in", "on"],
+      "answer": "at",
+      "explanation": {
+        "correct": "Arrive at dùng cho địa điểm cụ thể, quy mô nhỏ.",
+        "wrong": {
+          "to": "Arrive không đi với to.",
+          "in": "Arrive in dùng cho thành phố hoặc quốc gia.",
+          "on": "On không dùng với arrive."
+        }
+      }
+    },
+    {
+      "question": "She is good ___ math.",
+      "options": ["in", "at", "on", "for"],
+      "answer": "at",
+      "explanation": {
+        "correct": "Good at là cụm cố định chỉ năng lực.",
+        "wrong": {
+          "in": "Không dùng good in với kỹ năng.",
+          "on": "On không dùng cho năng lực.",
+          "for": "For dùng cho mục đích hoặc lợi ích."
+        }
+      }
+    },
+    {
+      "question": "This job is important ___ me.",
+      "options": ["for", "to", "with", "about"],
+      "answer": "to",
+      "explanation": {
+        "correct": "Important to nhấn mạnh ý nghĩa đối với ai đó.",
+        "wrong": {
+          "for": "Important for nhấn mạnh lợi ích cho mục đích.",
+          "with": "With không dùng trong cấu trúc này.",
+          "about": "About dùng cho chủ đề."
+        }
+      }
+    },
+    {
+      "question": "He is interested ___ psychology.",
+      "options": ["on", "at", "in", "about"],
+      "answer": "in",
+      "explanation": {
+        "correct": "Interested in là collocation bắt buộc.",
+        "wrong": {
+          "on": "On không dùng với interested.",
+          "at": "At không dùng cho sự quan tâm.",
+          "about": "About không đi với interested."
+        }
+      }
+    },
+    {
+      "question": "She is married ___ a doctor.",
+      "options": ["with", "to", "by", "for"],
+      "answer": "to",
+      "explanation": {
+        "correct": "Married to là cấu trúc đúng khi nói trạng thái hôn nhân.",
+        "wrong": {
+          "with": "Married with là lỗi phổ biến của người học.",
+          "by": "By không dùng cho quan hệ hôn nhân.",
+          "for": "For không phù hợp về nghĩa."
+        }
+      }
+    },
+    {
+      "question": "He was accused ___ stealing money.",
+      "options": ["of", "for", "about", "on"],
+      "answer": "of",
+      "explanation": {
+        "correct": "Accused of là cấu trúc cố định.",
+        "wrong": {
+          "for": "For không đi với accuse.",
+          "about": "About không dùng trong cấu trúc này.",
+          "on": "On không dùng với accuse."
+        }
+      }
+    },
+    {
+      "question": "She apologized ___ being late.",
+      "options": ["to", "for", "about", "with"],
+      "answer": "for",
+      "explanation": {
+        "correct": "Apologize for dùng cho hành động hoặc lỗi.",
+        "wrong": {
+          "to": "To dùng cho người nhận lời xin lỗi.",
+          "about": "About không dùng với apologize.",
+          "with": "With không phù hợp ngữ nghĩa."
+        }
+      }
+    },
+    {
+      "question": "He is responsible ___ the project.",
+      "options": ["for", "of", "with", "to"],
+      "answer": "for",
+      "explanation": {
+        "correct": "Responsible for nghĩa là chịu trách nhiệm về việc gì.",
+        "wrong": {
+          "of": "Of không dùng trong cấu trúc này.",
+          "with": "With không đúng ngữ pháp.",
+          "to": "Responsible to mang nghĩa chịu trách nhiệm trước ai đó."
+        }
+      }
+    },
+    {
+      "question": "This decision is based ___ reliable data.",
+      "options": ["on", "in", "at", "from"],
+      "answer": "on",
+      "explanation": {
+        "correct": "Based on là cấu trúc cố định.",
+        "wrong": {
+          "in": "Based in dùng cho địa điểm.",
+          "at": "At không dùng với based.",
+          "from": "From không đúng cấu trúc."
+        }
+      }
+    },
+    {
+      "question": "He spoke ___ confidence during the presentation.",
+      "options": ["with", "in", "by", "on"],
+      "answer": "with",
+      "explanation": {
+        "correct": "With dùng để chỉ cách thức hoặc thái độ.",
+        "wrong": {
+          "in": "In confidence nghĩa là bí mật.",
+          "by": "By không dùng cho thái độ.",
+          "on": "On không phù hợp."
+        }
+      }
+    },
 
-  "Music": [
     {
-      "question": "Which instrument has keys?",
-      "options": ["Piano", "Drum", "Guitar", "Violin"],
-      "answer": "Piano"
+      "question": "She depends ___ her parents.",
+      "options": ["on", "of", "to", "with"],
+      "answer": "on",
+      "explanation": {
+        "correct": "Depend on là cấu trúc cố định.",
+        "wrong": {
+          "of": "Of không dùng với depend.",
+          "to": "To không đúng ngữ pháp.",
+          "with": "With không đúng nghĩa."
+        }
+      }
     },
     {
-      "question": "Who sings songs?",
-      "options": ["Singer", "Driver", "Doctor", "Farmer"],
-      "answer": "Singer"
-    }
-  ],
-
-  "Traffic": [
-    {
-      "question": "What does a red light mean?",
-      "options": ["Stop", "Go", "Turn left", "Speed up"],
-      "answer": "Stop"
+      "question": "He insisted ___ paying the bill.",
+      "options": ["on", "for", "to", "about"],
+      "answer": "on",
+      "explanation": {
+        "correct": "Insist on đi với danh động từ.",
+        "wrong": {
+          "for": "For không dùng với insist.",
+          "to": "To không đúng cấu trúc.",
+          "about": "About không phù hợp."
+        }
+      }
     },
     {
-      "question": "This sign means:",
-      "options": ["No parking", "Hospital", "School", "Bus stop"],
-      "answer": "No parking"
+      "question": "She is afraid ___ snakes.",
+      "options": ["of", "from", "with", "to"],
+      "answer": "of",
+      "explanation": {
+        "correct": "Afraid of dùng cho nỗi sợ.",
+        "wrong": {
+          "from": "From không dùng với afraid.",
+          "with": "With không đúng nghĩa.",
+          "to": "To chỉ dùng trong afraid to do something."
+        }
+      }
+    },
+    {
+      "question": "He succeeded ___ solving the problem.",
+      "options": ["in", "at", "on", "for"],
+      "answer": "in",
+      "explanation": {
+        "correct": "Succeed in đi với danh động từ.",
+        "wrong": {
+          "at": "At không dùng với succeed.",
+          "on": "On không phù hợp.",
+          "for": "For không đúng cấu trúc."
+        }
+      }
+    },
+    {
+      "question": "She is familiar ___ this software.",
+      "options": ["with", "to", "for", "about"],
+      "answer": "with",
+      "explanation": {
+        "correct": "Familiar with dùng khi chủ thể là người.",
+        "wrong": {
+          "to": "Familiar to dùng khi chủ thể là vật.",
+          "for": "For không đúng.",
+          "about": "About không phù hợp."
+        }
+      }
+    },
+    {
+      "question": "He apologized ___ his teacher.",
+      "options": ["to", "for", "with", "about"],
+      "answer": "to",
+      "explanation": {
+        "correct": "Apologize to dùng cho người nhận lời xin lỗi.",
+        "wrong": {
+          "for": "For dùng cho hành động.",
+          "with": "With không dùng trong cấu trúc này.",
+          "about": "About không đúng."
+        }
+      }
+    },
+    {
+      "question": "She complained ___ the noise.",
+      "options": ["about", "on", "for", "to"],
+      "answer": "about",
+      "explanation": {
+        "correct": "Complain about dùng cho vấn đề phàn nàn.",
+        "wrong": {
+          "on": "On không đúng.",
+          "for": "For không phù hợp.",
+          "to": "To dùng cho người bị phàn nàn."
+        }
+      }
+    },
+    {
+      "question": "He is capable ___ doing the job.",
+      "options": ["of", "to", "for", "with"],
+      "answer": "of",
+      "explanation": {
+        "correct": "Capable of là cấu trúc cố định.",
+        "wrong": {
+          "to": "To không đúng cấu trúc.",
+          "for": "For không dùng với capable.",
+          "with": "With không phù hợp."
+        }
+      }
+    },
+    {
+      "question": "She congratulated him ___ his success.",
+      "options": ["on", "for", "about", "with"],
+      "answer": "on",
+      "explanation": {
+        "correct": "Congratulate someone on something.",
+        "wrong": {
+          "for": "For không dùng trong cấu trúc này.",
+          "about": "About không đúng.",
+          "with": "With không phù hợp."
+        }
+      }
+    },
+    {
+      "question": "She is proud ___ her achievements.",
+      "options": ["of", "for", "with", "about"],
+      "answer": "of",
+      "explanation": {
+        "correct": "Proud of là cấu trúc cố định chỉ sự tự hào.",
+        "wrong": {
+          "for": "For không dùng với proud.",
+          "with": "With không đúng ngữ nghĩa.",
+          "about": "About không dùng trong cấu trúc này."
+        }
+      }
+    },
+    {
+      "question": "He apologized ___ the mistake he made.",
+      "options": ["for", "to", "about", "with"],
+      "answer": "for",
+      "explanation": {
+        "correct": "Apologize for dùng khi nói về lỗi hoặc hành động.",
+        "wrong": {
+          "to": "To dùng cho người nhận lời xin lỗi.",
+          "about": "About không đúng cấu trúc.",
+          "with": "With không phù hợp."
+        }
+      }
+    },
+    {
+      "question": "She is responsible ___ managing the team.",
+      "options": ["for", "to", "with", "of"],
+      "answer": "for",
+      "explanation": {
+        "correct": "Responsible for dùng khi nói về nhiệm vụ hoặc công việc.",
+        "wrong": {
+          "to": "To dùng khi nói chịu trách nhiệm trước ai đó.",
+          "with": "With không đúng.",
+          "of": "Of không dùng trong cấu trúc này."
+        }
+      }
+    },
+    {
+      "question": "He is different ___ his brother.",
+      "options": ["from", "with", "to", "than"],
+      "answer": "from",
+      "explanation": {
+        "correct": "Different from là cách dùng chuẩn trong tiếng Anh.",
+        "wrong": {
+          "with": "With không đúng chuẩn học thuật.",
+          "to": "To chỉ dùng trong một số văn cảnh hạn chế.",
+          "than": "Than không dùng trực tiếp với different."
+        }
+      }
+    },
+    {
+      "question": "She is familiar ___ the new teaching method.",
+      "options": ["with", "to", "for", "about"],
+      "answer": "with",
+      "explanation": {
+        "correct": "Familiar with dùng khi chủ thể là người.",
+        "wrong": {
+          "to": "Familiar to dùng khi chủ thể là vật.",
+          "for": "For không phù hợp.",
+          "about": "About không đúng cấu trúc."
+        }
+      }
+    },
+    {
+      "question": "He insisted ___ his opinion despite criticism.",
+      "options": ["on", "in", "about", "for"],
+      "answer": "on",
+      "explanation": {
+        "correct": "Insist on dùng khi nhấn mạnh sự kiên quyết.",
+        "wrong": {
+          "in": "In không dùng với insist.",
+          "about": "About không đúng cấu trúc.",
+          "for": "For không phù hợp."
+        }
+      }
+    },
+    {
+      "question": "She succeeded ___ convincing the audience.",
+      "options": ["in", "at", "on", "for"],
+      "answer": "in",
+      "explanation": {
+        "correct": "Succeed in đi với danh động từ.",
+        "wrong": {
+          "at": "At không dùng với succeed.",
+          "on": "On không phù hợp.",
+          "for": "For không đúng cấu trúc."
+        }
+      }
+    },
+    {
+      "question": "He is worried ___ his final exam results.",
+      "options": ["about", "for", "of", "with"],
+      "answer": "about",
+      "explanation": {
+        "correct": "Worried about dùng cho sự lo lắng về vấn đề.",
+        "wrong": {
+          "for": "For dùng khi lo cho người khác.",
+          "of": "Of không dùng trong cấu trúc này.",
+          "with": "With không phù hợp."
+        }
+      }
+    },
+    {
+      "question": "She thanked him ___ his support.",
+      "options": ["for", "to", "about", "with"],
+      "answer": "for",
+      "explanation": {
+        "correct": "Thank someone for something là cấu trúc bắt buộc.",
+        "wrong": {
+          "to": "To không dùng sau thank.",
+          "about": "About không đúng.",
+          "with": "With không phù hợp."
+        }
+      }
+    },
+    {
+      "question": "He is famous ___ his research in data science.",
+      "options": ["for", "about", "of", "with"],
+      "answer": "for",
+      "explanation": {
+        "correct": "Famous for dùng để nói lý do nổi tiếng.",
+        "wrong": {
+          "about": "About không dùng với famous.",
+          "of": "Of không đúng cấu trúc.",
+          "with": "With không phù hợp."
+        }
+      }
     }
   ]
 }
